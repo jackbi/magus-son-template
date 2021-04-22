@@ -4,7 +4,7 @@
  * @Author: wenbin
  * @Date: 2021-04-21 14:34:29
  * @LastEditors: wenbin
- * @LastEditTime: 2021-04-21 17:07:18
+ * @LastEditTime: 2021-04-22 10:57:19
  * @FilePath: /magus-son-template/generator/index.js
  * Copyright (C) 2021 wenbin. All rights reserved.
  */
@@ -37,19 +37,6 @@ const tool = (api) => {
 };
 module.exports = (api, options, rootOptions) => {
   const utils = tool(api);
-  // 命令
-  api.extendPackage({
-    "name": "maguscloud",
-    "version": "0.1.0",
-    "private": true,
-    scripts: {
-      "start": "npm run serve",
-      "serve": "vue-cli-service serve --open",
-      "build": "vue-cli-service build",
-      "lint": "vue-cli-service lint"
-    },
-  });
-
   // 安装一些基础公共库
   api.extendPackage({
     dependencies: {
@@ -80,7 +67,13 @@ module.exports = (api, options, rootOptions) => {
       "sass-loader": "^9.0.0",
       "vue-i18n": "^8.24.2",
       "vue-template-compiler": "^2.6.11"
-    }
+    },
+    scripts: {
+      "start": "npm run serve",
+      "serve": "vue-cli-service serve --open",
+      "build": "vue-cli-service build",
+      "lint": "vue-cli-service lint"
+    },
   });
   // 删除 vue-cli3 默认目录
   api.render(files => {
