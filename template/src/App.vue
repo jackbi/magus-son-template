@@ -4,19 +4,19 @@
  * @Author: wenbin
  * @Date: 2021-03-31 11:33:17
  * @LastEditors: wenbin
- * @LastEditTime: 2021-04-21 16:52:12
- * @FilePath: /qiankun-vue/src/App.vue
+ * @LastEditTime: 2021-05-17 14:28:09
+ * @FilePath: /maguscloud-driver-ui/src/App.vue
  * Copyright (C) 2021 wenbin. All rights reserved.
 -->
 <template>
-  <div id="app" style="height: 100%; width: 100%;">
+  <div id="app" style="height: 100%; width: 100%">
     <magus-layout
       :headerInfo="headerInfo"
       v-if="$route.meta.isNeedLayout && !this.poweredByQiankun"
     >
       <router-view />
     </magus-layout>
-    <div style="height: 100%; width: 100%;" v-else>
+    <div style="height: 100%; width: 100%" v-else>
       <router-view />
       <!-- <div style="width: 100%; height: 100%;" id="qiankun-vue"></div> -->
     </div>
@@ -35,28 +35,24 @@ export default {
         // logo详细描述
         logoDetail: "上海麦杰科技股份有限公司",
         // 一级菜单
-        menuList: [
-          {
-            id: 1,
-            icon: "magusdipzhuye",
-            name: "首页",
-          },
-          {
-            id: 2,
-            icon: "magusdipyunying",
-            name: "盒子管理",
-          },
-          {
-            id: 3,
-            icon: "magusdipjiankong-",
-            name: "系统管理1",
-          },
-        ],
+        menuList: [],
       },
     };
   },
   mounted() {
     this.poweredByQiankun = window.__POWERED_BY_QIANKUN__;
+    if (!window.__POWERED_BY_QIANKUN__) {
+      this.getMenu();
+    }
+  },
+  methods: {
+    getMenu() {
+      this.$store
+        .dispatch("platform/GET_MENU_LIST", this.$magusCloudApi)
+        .then((res) => {
+          this.headerInfo.menuList = res.data;
+        });
+    },
   },
 };
 </script>

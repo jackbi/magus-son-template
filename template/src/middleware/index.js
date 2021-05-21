@@ -4,8 +4,8 @@
  * @Author: wenbin
  * @Date: 2021-04-21 15:09:22
  * @LastEditors: wenbin
- * @LastEditTime: 2021-04-21 17:04:55
- * @FilePath: /qiankun-vue/src/middleware/index.js
+ * @LastEditTime: 2021-05-21 11:18:40
+ * @FilePath: /magus-son-template/template/src/middleware/index.js
  * Copyright (C) 2021 wenbin. All rights reserved.
  */
 import Vue from 'vue';
@@ -20,6 +20,7 @@ import localZhCN from '../common/lang/zhCN';
 import '@maguscloud/maguscloud-ui/lib/maguscloud-ui.css';
 import ElementLocale from 'element-ui/lib/locale'
 import '@/router/routerFilter'
+import '../mock/index'
 
 Vue.prototype.magusCloudApi = magusUI.exportApi;
 

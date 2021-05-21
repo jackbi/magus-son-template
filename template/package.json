@@ -20,7 +20,7 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@maguscloud/maguscloud-ui": "^0.1.6",
+    "@maguscloud/maguscloud-ui": "^0.3.7",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -32,6 +32,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "image-webpack-loader": "^7.0.1",
+    "mockjs": "^1.1.0",
     "node-sass": "^4.0.0",
     "sass-loader": "^9.0.0",
     "vue-i18n": "^8.24.2",
